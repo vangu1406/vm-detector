@@ -1,0 +1,59 @@
+windows:
+  vm_vendors:
+    - vmware
+    - virtualbox
+    - kvm
+    - qemu
+    - microsoft corporation
+    - innotek
+  cpu_indicators:
+    - virtual
+    - vmware
+    - kvm
+    - qemu
+  mac_prefixes:
+    - 00-50-56
+    - 00-0c-29
+    - 00-05-69
+    - 08-00-27
+  processes:
+    - vmtoolsd.exe
+    - vboxtray.exe
+    - vboxservice.exe
+    - vmwareuser.exe
+  vm_files:
+    - C:\Windows\System32\drivers\vmmouse.sys
+    - C:\Windows\System32\drivers\vmhgfs.sys
+    - C:\Windows\System32\drivers\VBoxMouse.sys
+    - C:\Windows\System32\drivers\VBoxGuest.sys
+  service_checks:
+    - vmtools
+    - vboxservice
+    - vmusrvc
+    - vmmemctl
+linux:
+  model_files:
+    - /sys/devices/virtual/dmi/id/product_name
+    - /sys/class/dmi/id/product_name
+  vm_vendors:
+    - vmware
+    - virtualbox
+    - kvm
+    - qemu
+    - virtual machine
+    - vm
+  mac_prefixes:
+    - 00:50:56
+    - 00:0c:29
+    - 00:05:69
+    - 08:00:27
+  processes:
+    - vmtoolsd
+    - vboxtray
+    - vboxservice
+    - vmwareuser
+  kernel_modules:
+    - vmw_balloon
+    - vboxguest
+    - vboxsf
+    - vboxvideo
