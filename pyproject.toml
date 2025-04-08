@@ -19,7 +19,7 @@ dev = [
 ]
 
 [project.scripts]
-vm-detector = "vm_detector.main:main"
+vm-detector = "vm_detector.cli:main"
 
 [tool.setuptools]
 package-dir = {"" = "src"}

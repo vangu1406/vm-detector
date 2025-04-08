@@ -1,4 +1,3 @@
-import platform
 import sys
 from vm_detector import create_detector
 

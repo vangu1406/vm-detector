@@ -42,10 +42,10 @@ class LinuxVMDetector(VMDetector):
         return False, None
 
     def check_processes(self):
-        processes = self.run_command("ps aux")
         vm_processes = self.config.get('processes', [])
         for proc in vm_processes:
-            if proc.lower() in processes:
+            result = self.run_command(f"pgrep -f {proc}")
+            if result.strip():
                 return True, VMIndicator(f"VM process detected: {proc}", high_confidence=True)
         return False, None
 
