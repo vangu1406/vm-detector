@@ -8,6 +8,7 @@ from pathlib import Path
 from abc import ABC, abstractmethod
 from .models import VMIndicator
 
+
 class VMDetector(ABC):
     def __init__(self):
         self.os_type = platform.system()
@@ -32,7 +33,9 @@ class VMDetector(ABC):
 
     def run_command(self, command):
         try:
-            output = subprocess.check_output(command, shell=True, stderr=subprocess.STDOUT, universal_newlines=True)
+            output = subprocess.check_output(
+                command, shell=True, stderr=subprocess.STDOUT, universal_newlines=True
+            )
             return output.lower()
         except:
             return ""
@@ -68,11 +71,15 @@ class VMDetector(ABC):
             self.check_mac_address(),
             self.check_processes(),
             self.check_specific_files(),
-            self.additional_os_specific_checks()
+            self.additional_os_specific_checks(),
         ]
 
-        positive_results = [indicator for result, indicator in checks if result and indicator]
-        has_high_confidence = any(indicator.high_confidence for indicator in positive_results)
+        positive_results = [
+            indicator for result, indicator in checks if result and indicator
+        ]
+        has_high_confidence = any(
+            indicator.high_confidence for indicator in positive_results
+        )
 
         self.vm_indicators = positive_results
         return self._generate_result(positive_results, has_high_confidence)
@@ -88,8 +95,12 @@ class VMDetector(ABC):
         elif len(positive_results) == 1:
             print("RESULT: possible virtual machine, but only one evidence found.")
             print(f"- {positive_results[0].evidence}")
-            print("This could be a false positive. It is recommended to check using other methods.")
+            print(
+                "This could be a false positive. It is recommended to check using other methods."
+            )
             return False
         else:
-            print("RESULT: No virtual machines detected. This appears to be bare metal system.")
+            print(
+                "RESULT: No virtual machines detected. This appears to be bare metal system."
+            )
             return False

@@ -6,7 +6,7 @@ dev-setup:
 	pip install -r requirements-dev.txt
 	pip install -e .
 format:
-	#format code
+	black src tests
 lint:
 	#flake8 or pylint
 test:

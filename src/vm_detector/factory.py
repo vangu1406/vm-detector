@@ -2,6 +2,7 @@ import platform
 from .windows_detector import WindowsVMDetector
 from .linux_detector import LinuxVMDetector
 
+
 def create_detector():
 
     os_type = platform.system()
