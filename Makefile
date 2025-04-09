@@ -17,5 +17,5 @@ clean:
 	rm -f .coverage
 	rm -rf build
 	rm -rf dist
-	rm -rf *.egg-info
+	rm -rf src/*.egg-info
 all: install lint test clean
