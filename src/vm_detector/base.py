@@ -1,12 +1,10 @@
 #!/usr/bin/env python3
-import os
 import platform
 import subprocess
 import sys
 import yaml
 from pathlib import Path
 from abc import ABC, abstractmethod
-from .models import VMIndicator
 
 
 class VMDetector(ABC):

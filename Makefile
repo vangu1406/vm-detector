@@ -8,7 +8,7 @@ dev-setup:
 format:
 	black src tests
 lint:
-	#flake8 or pylint
+	pylint --disable=R,C src tests
 test:
 	#test code
 clean:

@@ -1,6 +1,4 @@
-import pytest
 from unittest.mock import patch
-from src.vm_detector import WindowsVMDetector, LinuxVMDetector
 
 
 def test_windows_detect_vm(windows_detector):

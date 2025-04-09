@@ -1,11 +1,9 @@
-import pytest
-from src.vm_detector import VMDetector, VMIndicator
+from src.vm_detector import VMIndicator
 from unittest.mock import patch
 from .conftest import _TestDetector
 
 
 def test_vm_indicator():
-    # from src.vm_detector.base import VMIndicator
     indicator = VMIndicator("test evidence", True)
     assert indicator.evidence == "test evidence"
     assert indicator.high_confidence == True
