@@ -8,9 +8,9 @@ dev-setup:
 format:
 	black src tests
 lint:
-	pylint --disable=R,C src tests
+	pylint --disable=R,C,W src tests
 test:
-	#test code
+	python -m pytest -vv --cov=src
 clean:
 	find . -type d -name '__pycache__' -exec rm -r {} +
 	rm -rf .pytest_cache
