@@ -18,4 +18,4 @@ clean:
 	rm -rf build
 	rm -rf dist
 	rm -rf src/*.egg-info
-all: install lint test clean
+all: dev-setup format lint test clean
