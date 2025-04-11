@@ -1,3 +1,4 @@
+[![Python application test with Github Actions](https://github.com/vangu1406/vm-detector/actions/workflows/python-app.yml/badge.svg)](https://github.com/vangu1406/vm-detector/actions/workflows/python-app.yml)
 ### vm-detector
 
 vm-detector is a module to detect the presence of virtual machines on **Linux** and **Windows** systems.
